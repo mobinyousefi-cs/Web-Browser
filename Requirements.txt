@@ -1,0 +1,5 @@
+PyQt5>=5.15
+PyQtWebEngine>=5.15
+pytest>=8.0
+black>=24.0
+ruff>=0.5

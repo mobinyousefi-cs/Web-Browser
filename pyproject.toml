@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyqt-web-browser"
+version = "0.1.0"
+description = "A clean, tabbed web browser built with PyQt5 and Qt WebEngine"
+readme = "README.md"
+authors = [
+  { name = "Mobin Yousefi", email = "" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+  "PyQt5>=5.15",
+  "PyQtWebEngine>=5.15",
+]
+
+[project.urls]
+Homepage = "https://github.com/mobinyousefi-cs"
+Issues = "https://github.com/mobinyousefi-cs"
+
+[project.scripts]
+pyqt-web-browser = "pyqt_web_browser.main:main"
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312", "py313"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "B", "UP", "RUF"]
+ignore = ["E203"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pyqt_web_browser"]
+profile = "black"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+python_files = ["test_*.py"]
